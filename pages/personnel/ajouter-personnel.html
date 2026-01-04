@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Personnel - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="liste-personnel.html">👨‍⚕️ Personnel</a>
+                <a href="ajouter-personnel.html" class="active">➕ Ajouter Personnel</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <a href="liste-personnel.html">Personnel</a>
+                    <span class="current">Ajouter</span>
+                </nav>
+
+                <h1>Ajouter un Nouveau Membre du Personnel</h1>
+
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <fieldset>
+                        <legend>📋 Informations Personnelles</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="prenom" class="required">Prénom</label>
+                                <input type="text" id="prenom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nom" class="required">Nom</label>
+                                <input type="text" id="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="required">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone" class="required">Téléphone</label>
+                                <input type="tel" id="telephone" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>💼 Informations Professionnelles</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="type" class="required">Type de Personnel</label>
+                                <select id="type" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="medecin">Médecin</option>
+                                    <option value="infirmier">Infirmier</option>
+                                    <option value="chirurgien">Chirurgien</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="specialite">Spécialité</label>
+                                <input type="text" id="specialite" placeholder="Ex: Cardiologie">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service</label>
+                                <select id="service">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="cardiologie">Cardiologie</option>
+                                    <option value="chirurgie">Chirurgie</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="salaire" class="required">Salaire Mensuel (€)</label>
+                                <input type="number" id="salaire" required min="0" placeholder="2500">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <a href="liste-personnel.html" class="btn btn-secondary">Annuler</a>
+                        <button type="submit" class="btn btn-primary">➕ Ajouter Personnel</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

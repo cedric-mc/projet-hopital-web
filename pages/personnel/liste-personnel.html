@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste du Personnel - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-item"><span class="header-icon">🔔</span></a>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <div class="sidebar-section">👥 Gestion</div>
+                <a href="../patients/liste-patients.html">👤 Patients</a>
+                <a href="liste-personnel.html" class="active">👨‍⚕️ Personnel</a>
+                <a href="../rendez-vous/liste-rdv.html">📅 Rendez-vous</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <span class="current">👨‍⚕️ Personnel</span>
+                </nav>
+
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>Gestion du Personnel</h1>
+                        <p class="text-muted">48 employés actifs</p>
+                    </div>
+                    <a href="ajouter-personnel.html" class="btn btn-primary">➕ Ajouter Personnel</a>
+                </div>
+
+                <div class="card mb-lg">
+                    <div class="card-body">
+                        <div class="table-search-box">
+                            <input type="text" placeholder="Rechercher par nom...">
+                            <select>
+                                <option value="">Tous les types</option>
+                                <option value="medecin">Médecin</option>
+                                <option value="infirmier">Infirmier</option>
+                                <option value="chirurgien">Chirurgien</option>
+                            </select>
+                            <button class="btn btn-secondary">🔍 Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👨‍⚕️</div>
+                        <h3 class="personnel-name">Dr. Sarah Cohen</h3>
+                        <p class="personnel-specialty">Cardiologue</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 sarah.cohen@hopital.fr</div>
+                            <div>📞 06 12 34 56 78</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👨‍⚕️</div>
+                        <h3 class="personnel-name">Dr. Pierre Lefevre</h3>
+                        <p class="personnel-specialty">Orthopédiste</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 pierre.lefevre@hopital.fr</div>
+                            <div>📞 06 98 76 54 32</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👩‍⚕️</div>
+                        <h3 class="personnel-name">Dr. Anne Moreau</h3>
+                        <p class="personnel-specialty">Chirurgienne</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 anne.moreau@hopital.fr</div>
+                            <div>📞 06 55 44 33 22</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👩‍⚕️</div>
+                        <h3 class="personnel-name">Dr. Caroline Blanc</h3>
+                        <p class="personnel-specialty">Pédiatre</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 caroline.blanc@hopital.fr</div>
+                            <div>📞 06 77 88 99 00</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👨‍⚕️</div>
+                        <h3 class="personnel-name">Infirmier Jacques Dupont</h3>
+                        <p class="personnel-specialty">Infirmier Général</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 jacques.dupont@hopital.fr</div>
+                            <div>📞 06 11 22 33 44</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+
+                    <div class="card card-personnel">
+                        <div class="personnel-avatar">👩‍⚕️</div>
+                        <h3 class="personnel-name">Infirmière Margot Fontaine</h3>
+                        <p class="personnel-specialty">Infirmière Spécialisée</p>
+                        <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-lg);">
+                            <div>📧 margot.fontaine@hopital.fr</div>
+                            <div>📞 06 55 66 77 88</div>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-sm btn-primary">👁️ Voir Profil</button>
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center; border-top: 1px solid var(--border-color);">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        menuToggle.addEventListener('click', () => sidebar.classList.toggle('active'));
+    </script>
+</body>
+</html>
