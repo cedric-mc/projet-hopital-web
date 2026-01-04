@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Système de Gestion Hospitalière - Tableau de bord et administration">
+    <title>Tableau de Bord - Hopital Central</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Header -->
+        <header role="banner">
+            <div class="header-left">
+                <a href="index.html" class="logo" aria-label="Accueil Hopital Central">
+                    <div class="logo-icon">🏥</div>
+                    <span>Hopital Central</span>
+                </a>
+            </div>
+            
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+                <p class="hospital-subtitle">Excellence en Santé</p>
+            </div>
+            
+            <div class="header-right">
+                <a href="#notifications" class="header-item" aria-label="Notifications">
+                    <span class="header-icon">🔔</span>
+                    <span class="notification-badge">3</span>
+                </a>
+                <a href="#messages" class="header-item" aria-label="Messages">
+                    <span class="header-icon">💬</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                    ☰
+                </button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                        <div class="user-role">Administrateur</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
+            <nav>
+                <div class="sidebar-section">👥 Gestion</div>
+                <a href="pages/patients/liste-patients.html" class="active">👤 Patients</a>
+                <a href="pages/personnel/liste-personnel.html">👨‍⚕️ Personnel</a>
+                <a href="pages/rendez-vous/liste-rdv.html">📅 Rendez-vous</a>
+                <a href="pages/chambres/gestion-chambres.html">🛏️ Chambres</a>
+                
+                <div class="sidebar-section" style="margin-top: var(--spacing-lg);">💼 Opérations</div>
+                <a href="pages/rendez-vous/planifier-rdv.html">➕ Planifier RDV</a>
+                <a href="pages/patients/admission-patient.html">➕ Admettre Patient</a>
+                <a href="pages/rendez-vous/consultation.html">📋 Consultation</a>
+                
+                <div class="sidebar-section" style="margin-top: var(--spacing-lg);">📊 Rapports</div>
+                <a href="pages/facturation/facturation.html">💰 Facturation</a>
+                <a href="pages/facturation/historique-paiements.html">📈 Historique</a>
+                <a href="pages/statistiques/tableau-bord.html">📊 Statistiques</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main role="main">
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                    <span class="current">🏠 Tableau de Bord</span>
+                </nav>
+
+                <!-- Page Title -->
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>Bienvenue, Dr. Dupont</h1>
+                        <p class="text-muted">Dernier accès: aujourd'hui à 9:30</p>
+                    </div>
+                    <button class="btn btn-primary">
+                        📥 Exporter Rapport
+                    </button>
+                </div>
+
+                <!-- KPI Cards Section -->
+                <section>
+                    <h2>Statistiques Clés</h2>
+                    <div class="cards-grid">
+                        <div class="card card-stats card-stats-info">
+                            <div class="card-stats-icon">👥</div>
+                            <div class="card-stats-value">1,247</div>
+                            <p class="card-stats-label">Patients Actifs</p>
+                            <div class="card-stats-change">↑ 12% depuis le mois dernier</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-success">
+                            <div class="card-stats-icon">👨‍⚕️</div>
+                            <div class="card-stats-value">48</div>
+                            <p class="card-stats-label">Personnel</p>
+                            <div class="card-stats-change">12 médecins • 24 infirmiers</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-warning">
+                            <div class="card-stats-icon">🛏️</div>
+                            <div class="card-stats-value">82%</div>
+                            <p class="card-stats-label">Occupation Lits</p>
+                            <div class="card-stats-change">↑ 5 nouveaux patients</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-danger">
+                            <div class="card-stats-icon">💰</div>
+                            <div class="card-stats-value">542K€</div>
+                            <p class="card-stats-label">Revenus Mois</p>
+                            <div class="card-stats-change">↑ 8% par rapport à l'an dernier</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Alerts Section -->
+                <section>
+                    <h2>⚠️ Alertes Importantes</h2>
+                    <div class="alert alert-warning">
+                        <strong>Capacité Approchante:</strong> Les chambres de chirurgie seront saturées demain. Veuillez planifier en conséquence.
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Stocks Critiques:</strong> Les masques chirurgicaux sont en rupture de stock. Commande urgente en cours.
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Maintenance:</strong> Le système de facturation sera mis à jour ce week-end (vendredi 22h - samedi 6h).
+                    </div>
+                </section>
+
+                <!-- Rendez-vous d'aujourd'hui -->
+                <section>
+                    <h2>📅 Rendez-vous d'Aujourd'hui (8)</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                        <div class="card card-appointment">
+                            <div class="appointment-time">08:00</div>
+                            <div class="appointment-patient">Jean Martin</div>
+                            <div class="appointment-doctor">Dr. Sarah Cohen</div>
+                            <div class="appointment-type">Consultation</div>
+                        </div>
+
+                        <div class="card card-appointment">
+                            <div class="appointment-time">09:15</div>
+                            <div class="appointment-patient">Marie Dubois</div>
+                            <div class="appointment-doctor">Dr. Pierre Lefevre</div>
+                            <div class="appointment-type">Suivi</div>
+                        </div>
+
+                        <div class="card card-appointment pending">
+                            <div class="appointment-time">10:30</div>
+                            <div class="appointment-patient">Luc Bernard</div>
+                            <div class="appointment-doctor">Dr. Anne Moreau</div>
+                            <div class="appointment-type">Opération</div>
+                        </div>
+
+                        <div class="card card-appointment">
+                            <div class="appointment-time">14:00</div>
+                            <div class="appointment-patient">Sophie Laurent</div>
+                            <div class="appointment-doctor">Dr. Thomas Renault</div>
+                            <div class="appointment-type">Consultation</div>
+                        </div>
+
+                        <div class="card card-appointment completed">
+                            <div class="appointment-time">15:30</div>
+                            <div class="appointment-patient">Michel Petit</div>
+                            <div class="appointment-doctor">Dr. Caroline Blanc</div>
+                            <div class="appointment-type">Suivi</div>
+                        </div>
+
+                        <div class="card card-appointment">
+                            <div class="appointment-time">16:45</div>
+                            <div class="appointment-patient">Claire Vincent</div>
+                            <div class="appointment-doctor">Dr. Nicolas Garnier</div>
+                            <div class="appointment-type">Consultation</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: var(--spacing-lg);">
+                        <a href="pages/rendez-vous/liste-rdv.html" class="btn btn-primary">Voir tous les rendez-vous</a>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section>
+                    <h2>📊 Graphiques et Statistiques</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                        <!-- Bar Chart - Services -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Occupation par Service</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                        <span>Cardiologie</span>
+                                        <span style="font-weight: bold;">85%</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9); border-radius: 4px;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                        <span>Chirurgie</span>
+                                        <span style="font-weight: bold;">92%</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #e74c3c, #c0392b); border-radius: 4px;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                        <span>Pédiatrie</span>
+                                        <span style="font-weight: bold;">68%</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 68%; height: 100%; background: linear-gradient(90deg, #2ecc71, #27ae60); border-radius: 4px;"></div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                                        <span>Urgences</span>
+                                        <span style="font-weight: bold;">78%</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #f39c12, #d68910); border-radius: 4px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart - Distribution patients -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Distribution Patients</div>
+                            <div style="padding: var(--spacing-lg) 0; text-align: center;">
+                                <div style="width: 150px; height: 150px; margin: 0 auto var(--spacing-lg); background: conic-gradient(#3498db 0deg 135deg, #2ecc71 135deg 225deg, #f39c12 225deg 315deg, #e74c3c 315deg 360deg); border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+                                
+                                <div class="chart-legend" style="justify-content: center;">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #3498db;"></div>
+                                        <span>Externes (45%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #2ecc71;"></div>
+                                        <span>Hospitalisés (35%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #f39c12;"></div>
+                                        <span>Urgences (15%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #e74c3c;"></div>
+                                        <span>Chirurgie (5%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue Chart -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Revenus Mensuels</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="display: flex; align-items: flex-end; gap: var(--spacing-md); height: 150px;">
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 60%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">45K€</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 75%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">52K€</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 85%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">58K€</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 100%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">65K€</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 78%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">54K€</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 90%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold;">63K€</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-xl); font-size: var(--font-size-sm); color: var(--gray-500);">
+                                    <span>Jan</span>
+                                    <span>Fév</span>
+                                    <span>Mar</span>
+                                    <span>Avr</span>
+                                    <span>Mai</span>
+                                    <span>Juin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section>
+                    <h2>Accès Rapides</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg);">
+                        <a href="pages/patients/admission-patient.html" class="card" style="text-align: center; text-decoration: none; color: inherit;">
+                            <div style="padding: var(--spacing-xl);">
+                                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-md);">➕</div>
+                                <h3>Admettre un Patient</h3>
+                                <p style="color: var(--gray-500);">Enregistrer un nouveau patient</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/rendez-vous/planifier-rdv.html" class="card" style="text-align: center; text-decoration: none; color: inherit;">
+                            <div style="padding: var(--spacing-xl);">
+                                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-md);">📅</div>
+                                <h3>Planifier RDV</h3>
+                                <p style="color: var(--gray-500);">Créer un rendez-vous</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/rendez-vous/consultation.html" class="card" style="text-align: center; text-decoration: none; color: inherit;">
+                            <div style="padding: var(--spacing-xl);">
+                                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-md);">📋</div>
+                                <h3>Nouvelle Consultation</h3>
+                                <p style="color: var(--gray-500);">Enregistrer une consultation</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/facturation/facturation.html" class="card" style="text-align: center; text-decoration: none; color: inherit;">
+                            <div style="padding: var(--spacing-xl);">
+                                <div style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-md);">💰</div>
+                                <h3>Facturer</h3>
+                                <p style="color: var(--gray-500);">Générer une facture</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center; border-top: 1px solid var(--border-color);">
+            <p style="margin: 0;">&copy; 2026 Hopital Central - Système de Gestion Hospitalière. Tous droits réservés.</p>
+            <p style="margin: var(--spacing-sm) 0 0; font-size: var(--font-size-sm); opacity: 0.8;">Version 1.0 | Support: contact@hopital-central.fr</p>
+        </footer>
+    </div>
+
+    <script>
+        // Menu toggle pour mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', sidebar.classList.contains('active'));
+            });
+
+            // Fermer le menu en cliquant sur un lien
+            sidebar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeButton(currentTheme);
+
+            themeToggle.addEventListener('click', () => {
+                const html = document.documentElement;
+                const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeButton(newTheme);
+            });
+
+            function updateThemeButton(theme) {
+                themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+                themeToggle.setAttribute('aria-label', theme === 'light' ? 'Activer mode sombre' : 'Activer mode clair');
+            }
+        }
+    </script>
+
+    <!-- Theme toggle button -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème"></button>
+</body>
+</html>
