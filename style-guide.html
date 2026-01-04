@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Style - Hopital Central</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <div class="sidebar-section">📚 Documentation</div>
+                <a href="style-guide.html" class="active">📖 Guide de Style</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <h1>📖 Guide de Style - Composants Réutilisables</h1>
+                <p class="text-muted mb-lg">Catalogue complet de tous les composants UI du système</p>
+
+                <!-- Colors Section -->
+                <section>
+                    <h2>🎨 Palette de Couleurs</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-lg);">
+                        <div style="padding: var(--spacing-lg); background-color: #3498db; border-radius: var(--border-radius); color: white; text-align: center;">
+                            <div style="font-weight: bold; margin-bottom: var(--spacing-sm);">Primaire</div>
+                            <div style="font-size: var(--font-size-sm);">#3498db</div>
+                        </div>
+                        <div style="padding: var(--spacing-lg); background-color: #2ecc71; border-radius: var(--border-radius); color: white; text-align: center;">
+                            <div style="font-weight: bold; margin-bottom: var(--spacing-sm);">Succès</div>
+                            <div style="font-size: var(--font-size-sm);">#2ecc71</div>
+                        </div>
+                        <div style="padding: var(--spacing-lg); background-color: #e74c3c; border-radius: var(--border-radius); color: white; text-align: center;">
+                            <div style="font-weight: bold; margin-bottom: var(--spacing-sm);">Danger</div>
+                            <div style="font-size: var(--font-size-sm);">#e74c3c</div>
+                        </div>
+                        <div style="padding: var(--spacing-lg); background-color: #f39c12; border-radius: var(--border-radius); color: white; text-align: center;">
+                            <div style="font-weight: bold; margin-bottom: var(--spacing-sm);">Alerte</div>
+                            <div style="font-size: var(--font-size-sm);">#f39c12</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Buttons Section -->
+                <section>
+                    <h2>🔘 Boutons</h2>
+                    <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
+                        <button class="btn btn-primary">Primary Button</button>
+                        <button class="btn btn-secondary">Secondary Button</button>
+                        <button class="btn btn-success">Success Button</button>
+                        <button class="btn btn-danger">Danger Button</button>
+                        <button class="btn btn-warning">Warning Button</button>
+                    </div>
+
+                    <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
+                        <button class="btn btn-outline-primary">Outline Primary</button>
+                        <button class="btn btn-outline-danger">Outline Danger</button>
+                        <button class="btn btn-primary btn-sm">Small Button</button>
+                        <button class="btn btn-primary btn-lg">Large Button</button>
+                        <button class="btn btn-primary" disabled>Disabled Button</button>
+                    </div>
+                </section>
+
+                <!-- Cards Section -->
+                <section>
+                    <h2>📇 Cartes</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h3>Carte Standard</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Contenu de la carte</p>
+                            </div>
+                        </div>
+
+                        <div class="card card-stats">
+                            <div class="card-stats-icon">📊</div>
+                            <div class="card-stats-value">250</div>
+                            <p class="card-stats-label">Statistiques</p>
+                        </div>
+
+                        <div class="card card-patient">
+                            <div class="patient-avatar">👤</div>
+                            <div class="patient-info">
+                                <div class="patient-name">Jean Martin</div>
+                                <div class="patient-details">
+                                    <div class="patient-detail-item">
+                                        <div class="patient-detail-label">Âge</div>
+                                        <div class="patient-detail-value">45</div>
+                                    </div>
+                                    <div class="patient-detail-item">
+                                        <div class="patient-detail-label">Type</div>
+                                        <div class="patient-detail-value">Externe</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Badges Section -->
+                <section>
+                    <h2>🏷️ Badges</h2>
+                    <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-danger">Danger</span>
+                        <span class="badge badge-warning">Warning</span>
+                        <span class="badge badge-info">Info</span>
+                        <span class="badge badge-secondary">Secondary</span>
+                    </div>
+                </section>
+
+                <!-- Typography Section -->
+                <section>
+                    <h2>✍️ Typographie</h2>
+                    <h1>Titre H1 (32px, Bold)</h1>
+                    <h2>Titre H2 (28px, Bold)</h2>
+                    <h3>Titre H3 (24px, Bold)</h3>
+                    <h4>Titre H4 (20px, Bold)</h4>
+                    <h5>Titre H5 (16px, Bold)</h5>
+                    <h6>Titre H6 (16px, Bold)</h6>
+                    <p>Paragraphe normal (16px, Regular) - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p style="font-size: var(--font-size-sm);">Petit texte (14px, Regular) - Utilisé pour les labels et informations secondaires.</p>
+                </section>
+
+                <!-- Forms Section -->
+                <section>
+                    <h2>📝 Formulaires</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <form style="max-width: 500px;">
+                                <div class="form-group">
+                                    <label for="text-input" class="required">Champ Texte</label>
+                                    <input type="text" id="text-input" placeholder="Placeholder...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email-input" class="required">Email</label>
+                                    <input type="email" id="email-input" placeholder="email@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="select-input">Select</label>
+                                    <select id="select-input">
+                                        <option value="">-- Sélectionner --</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="textarea-input">Textarea</label>
+                                    <textarea id="textarea-input" placeholder="Texte long..."></textarea>
+                                </div>
+
+                                <div class="form-check">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span style="margin-left: var(--spacing-sm);">Checkbox option</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label>
+                                        <input type="radio" name="radio">
+                                        <span style="margin-left: var(--spacing-sm);">Radio option 1</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="radio">
+                                        <span style="margin-left: var(--spacing-sm);">Radio option 2</span>
+                                    </label>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">Soumettre</button>
+                                    <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Alerts Section -->
+                <section>
+                    <h2>⚠️ Alertes</h2>
+                    <div class="alert alert-success">✓ Ceci est une alerte de succès</div>
+                    <div class="alert alert-danger">✗ Ceci est une alerte de danger</div>
+                    <div class="alert alert-warning">⚠ Ceci est une alerte d'avertissement</div>
+                    <div class="alert alert-info">ℹ Ceci est une alerte d'information</div>
+                </section>
+
+                <!-- Spacing Section -->
+                <section>
+                    <h2>📏 Espacements</h2>
+                    <div style="display: grid; gap: var(--spacing-lg);">
+                        <div>
+                            <p style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Extra Small (5px)</p>
+                            <div style="background-color: var(--primary-color); width: 5px; height: 30px;"></div>
+                        </div>
+                        <div>
+                            <p style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Small (10px)</p>
+                            <div style="background-color: var(--primary-color); width: 10px; height: 30px;"></div>
+                        </div>
+                        <div>
+                            <p style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Medium (20px)</p>
+                            <div style="background-color: var(--primary-color); width: 20px; height: 30px;"></div>
+                        </div>
+                        <div>
+                            <p style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Large (30px)</p>
+                            <div style="background-color: var(--primary-color); width: 30px; height: 30px;"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page non trouvée</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: var(--spacing-lg);
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: var(--spacing-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-title {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-heading);
+        }
+        
+        .error-description {
+            font-size: 20px;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.9;
+            max-width: 500px;
+        }
+        
+        .error-animation {
+            font-size: 80px;
+            margin-bottom: var(--spacing-lg);
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        .error-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            background: white;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .error-icon-spin {
+            display: inline-block;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-animation">🏥</div>
+        <h1 class="error-title">Service Indisponible</h1>
+        <p class="error-description">
+            Désolé, la page que vous cherchez n'existe pas ou a été déplacée. 
+            L'équipe médicale est à la recherche ! 🔍
+        </p>
+        
+        <div class="error-links">
+            <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+            <a href="pages/patients/liste-patients.html" class="btn btn-secondary">Voir les patients</a>
+        </div>
+        
+        <p style="margin-top: var(--spacing-xl); opacity: 0.7; font-size: 14px;">
+            Si vous pensez que c'est une erreur, contactez l'administrateur système.
+        </p>
+    </div>
+</body>
+</html>
