@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifier RDV - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="planifier-rdv.html" class="active">➕ Planifier RDV</a>
+                <a href="liste-rdv.html">📅 Rendez-vous</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <h1>📅 Planifier un Rendez-vous</h1>
+
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <fieldset>
+                        <legend>Patient</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="patient" class="required">Patient</label>
+                                <input type="text" id="patient" list="patients" placeholder="Sélectionner un patient..." required>
+                                <datalist id="patients">
+                                    <option value="Jean Martin">
+                                    <option value="Marie Dubois">
+                                    <option value="Sophie Laurent">
+                                </datalist>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" readonly>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Médecin & Consultation</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="specialite" class="required">Spécialité</label>
+                                <select id="specialite" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="cardio">Cardiologie</option>
+                                    <option value="chirurgie">Chirurgie</option>
+                                    <option value="pediatrie">Pédiatrie</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="medecin" class="required">Médecin</label>
+                                <select id="medecin" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="cohen">Dr. Sarah Cohen</option>
+                                    <option value="lefevre">Dr. Pierre Lefevre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date" class="required">Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="heure" class="required">Heure</label>
+                                <input type="time" id="heure" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="duree">Durée (minutes)</label>
+                                <input type="number" id="duree" value="30" min="15" max="120">
+                            </div>
+                            <div class="form-group">
+                                <label for="type">Type</label>
+                                <select id="type">
+                                    <option value="consultation">Consultation</option>
+                                    <option value="suivi">Suivi</option>
+                                    <option value="operation">Opération</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-group-full">
+                                <label for="motif" class="required">Motif</label>
+                                <textarea id="motif" required maxlength="500" style="min-height: 80px;"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="reset" class="btn btn-secondary">🔄 Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary">✓ Planifier RDV</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

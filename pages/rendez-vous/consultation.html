@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="consultation.html" class="active">📋 Consultation</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <h1>📋 Rapport de Consultation</h1>
+
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <fieldset>
+                        <legend>Patient</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="patient" class="required">Patient</label>
+                                <input type="text" id="patient" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date" class="required">Date Consultation</label>
+                                <input type="date" id="date" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Examen Clinique</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="temperature">Température (°C)</label>
+                                <input type="number" id="temperature" step="0.1" placeholder="37.5">
+                            </div>
+                            <div class="form-group">
+                                <label for="tension">Tension Artérielle</label>
+                                <input type="text" id="tension" placeholder="120/80">
+                            </div>
+                            <div class="form-group">
+                                <label for="poids">Poids (kg)</label>
+                                <input type="number" id="poids" step="0.1" placeholder="75">
+                            </div>
+                            <div class="form-group">
+                                <label for="taille">Taille (cm)</label>
+                                <input type="number" id="taille" placeholder="180">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="symptomes">Symptômes Rapportés</label>
+                            <textarea id="symptomes" style="min-height: 100px;" placeholder="Décrire les symptômes présentés par le patient..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="examen">Résultats Examen</label>
+                            <textarea id="examen" style="min-height: 100px;" placeholder="Détails de l'examen physique..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Diagnostic & Traitement</legend>
+                        <div class="form-group form-group-full">
+                            <label for="diagnostic" class="required">Diagnostic</label>
+                            <textarea id="diagnostic" required style="min-height: 100px;" placeholder="Diagnostic principal et secondaires..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="prescriptions" class="required">Prescriptions</label>
+                            <textarea id="prescriptions" required style="min-height: 120px;" placeholder="Médicaments et posologie..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="recommandations">Recommandations</label>
+                            <textarea id="recommandations" style="min-height: 100px;" placeholder="Conseils et recommandations..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suivi">Suivi Prévu</label>
+                            <select id="suivi">
+                                <option value="1_semaine">1 semaine</option>
+                                <option value="2_semaines">2 semaines</option>
+                                <option value="1_mois">1 mois</option>
+                                <option value="3_mois">3 mois</option>
+                                <option value="aucun">Aucun suivi</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="reset" class="btn btn-secondary">🔄 Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary">✓ Enregistrer Consultation</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

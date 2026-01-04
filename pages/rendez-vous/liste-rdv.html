@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste RDV - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="planifier-rdv.html">➕ Planifier RDV</a>
+                <a href="liste-rdv.html" class="active">📅 Rendez-vous</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>📅 Rendez-vous</h1>
+                        <p class="text-muted">Calendrier des consultations</p>
+                    </div>
+                    <a href="planifier-rdv.html" class="btn btn-primary">➕ Nouveau RDV</a>
+                </div>
+
+                <div class="card mb-lg">
+                    <div class="card-body">
+                        <div class="table-search-box">
+                            <input type="text" placeholder="Rechercher...">
+                            <select>
+                                <option value="">Tous les statuts</option>
+                                <option value="planifié">Planifié</option>
+                                <option value="confirmé">Confirmé</option>
+                                <option value="complété">Complété</option>
+                            </select>
+                            <button class="btn btn-secondary">🔍 Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card card-appointment">
+                        <div class="appointment-time">08:00</div>
+                        <div class="appointment-patient">Jean Martin</div>
+                        <div class="appointment-doctor">Dr. Sarah Cohen</div>
+                        <div class="appointment-type">Consultation</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-success">Confirmé</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-appointment">
+                        <div class="appointment-time">09:30</div>
+                        <div class="appointment-patient">Marie Dubois</div>
+                        <div class="appointment-doctor">Dr. Pierre Lefevre</div>
+                        <div class="appointment-type">Suivi</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-success">Confirmé</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-appointment pending">
+                        <div class="appointment-time">11:00</div>
+                        <div class="appointment-patient">Luc Bernard</div>
+                        <div class="appointment-doctor">Dr. Anne Moreau</div>
+                        <div class="appointment-type">Opération</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-warning">En attente</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-appointment completed">
+                        <div class="appointment-time">14:00</div>
+                        <div class="appointment-patient">Sophie Laurent</div>
+                        <div class="appointment-doctor">Dr. Caroline Blanc</div>
+                        <div class="appointment-type">Consultation</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-success">Complété</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-appointment cancelled">
+                        <div class="appointment-time">15:30</div>
+                        <div class="appointment-patient">Michel Petit</div>
+                        <div class="appointment-doctor">Dr. Thomas Renault</div>
+                        <div class="appointment-type">Suivi</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-danger">Annulé</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-appointment">
+                        <div class="appointment-time">16:30</div>
+                        <div class="appointment-patient">Claire Vincent</div>
+                        <div class="appointment-doctor">Dr. Nicolas Garnier</div>
+                        <div class="appointment-type">Consultation</div>
+                        <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color);">
+                            <span class="badge badge-success">Confirmé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
