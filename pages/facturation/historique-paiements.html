@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique Paiements - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="facturation.html">💰 Facturation</a>
+                <a href="historique-paiements.html" class="active">📈 Historique</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>📈 Historique des Paiements</h1>
+                        <p class="text-muted">Total collecté: 542,000€</p>
+                    </div>
+                </div>
+
+                <div class="card mb-lg">
+                    <div class="card-body">
+                        <div class="table-search-box">
+                            <input type="text" placeholder="Rechercher patient...">
+                            <input type="date" placeholder="De">
+                            <input type="date" placeholder="À">
+                            <button class="btn btn-secondary">🔍 Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Facture</th>
+                                        <th>Patient</th>
+                                        <th>Service</th>
+                                        <th>Montant HT</th>
+                                        <th>TVA</th>
+                                        <th>Total TTC</th>
+                                        <th>Mode Paiement</th>
+                                        <th>Statut</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Date">14/12/2025</td>
+                                        <td data-label="Facture">F20251214001</td>
+                                        <td data-label="Patient">Jean Martin</td>
+                                        <td data-label="Service">Consultation</td>
+                                        <td data-label="Montant HT" style="text-align: right;">150.00€</td>
+                                        <td data-label="TVA" style="text-align: right;">30.00€</td>
+                                        <td data-label="Total TTC" style="text-align: right;">180.00€</td>
+                                        <td data-label="Mode">Carte Bancaire</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Payé</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Date">13/12/2025</td>
+                                        <td data-label="Facture">F20251213001</td>
+                                        <td data-label="Patient">Marie Dubois</td>
+                                        <td data-label="Service">Hospitalisation (3j)</td>
+                                        <td data-label="Montant HT" style="text-align: right;">750.00€</td>
+                                        <td data-label="TVA" style="text-align: right;">150.00€</td>
+                                        <td data-label="Total TTC" style="text-align: right;">900.00€</td>
+                                        <td data-label="Mode">Virement</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Payé</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Date">12/12/2025</td>
+                                        <td data-label="Facture">F20251212001</td>
+                                        <td data-label="Patient">Luc Bernard</td>
+                                        <td data-label="Service">Opération</td>
+                                        <td data-label="Montant HT" style="text-align: right;">2000.00€</td>
+                                        <td data-label="TVA" style="text-align: right;">400.00€</td>
+                                        <td data-label="Total TTC" style="text-align: right;">2400.00€</td>
+                                        <td data-label="Mode">Assurance</td>
+                                        <td data-label="Statut"><span class="badge badge-warning">En cours</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Date">11/12/2025</td>
+                                        <td data-label="Facture">F20251211001</td>
+                                        <td data-label="Patient">Sophie Laurent</td>
+                                        <td data-label="Service">Consultation</td>
+                                        <td data-label="Montant HT" style="text-align: right;">150.00€</td>
+                                        <td data-label="TVA" style="text-align: right;">30.00€</td>
+                                        <td data-label="Total TTC" style="text-align: right;">180.00€</td>
+                                        <td data-label="Mode">Espèces</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Payé</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Date">10/12/2025</td>
+                                        <td data-label="Facture">F20251210001</td>
+                                        <td data-label="Patient">Michel Petit</td>
+                                        <td data-label="Service">Imagerie</td>
+                                        <td data-label="Montant HT" style="text-align: right;">300.00€</td>
+                                        <td data-label="TVA" style="text-align: right;">60.00€</td>
+                                        <td data-label="Total TTC" style="text-align: right;">360.00€</td>
+                                        <td data-label="Mode">Chèque</td>
+                                        <td data-label="Statut"><span class="badge badge-danger">Non payé</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques -->
+                <section style="margin-top: var(--spacing-xl);">
+                    <h2>📊 Résumé Financier</h2>
+                    <div class="cards-grid">
+                        <div class="card card-stats card-stats-success">
+                            <div class="card-stats-icon">✓</div>
+                            <div class="card-stats-value">1,620€</div>
+                            <p class="card-stats-label">Montant Payé</p>
+                        </div>
+
+                        <div class="card card-stats card-stats-warning">
+                            <div class="card-stats-icon">⏳</div>
+                            <div class="card-stats-value">2,400€</div>
+                            <p class="card-stats-label">En Attente</p>
+                        </div>
+
+                        <div class="card card-stats card-stats-danger">
+                            <div class="card-stats-icon">✗</div>
+                            <div class="card-stats-value">360€</div>
+                            <p class="card-stats-label">Non Payé</p>
+                        </div>
+
+                        <div class="card card-stats card-stats-info">
+                            <div class="card-stats-icon">💰</div>
+                            <div class="card-stats-value">4,380€</div>
+                            <p class="card-stats-label">Total Mois</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

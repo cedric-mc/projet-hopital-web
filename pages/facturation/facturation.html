@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturation - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="facturation.html" class="active">💰 Facturation</a>
+                <a href="historique-paiements.html">📈 Historique</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <h1>💰 Facturation</h1>
+
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <fieldset>
+                        <legend>Patient</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="patient" class="required">Patient</label>
+                                <input type="text" id="patient" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numsecu">N° Sécu</label>
+                                <input type="text" id="numsecu" readonly>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Détails de la Facture</legend>
+                        <div class="form-group form-group-full">
+                            <label for="motif" class="required">Motif/Service</label>
+                            <select id="motif" required>
+                                <option value="">-- Sélectionner --</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="hospitalisé">Hospitalisation</option>
+                                <option value="operation">Opération</option>
+                                <option value="imagerie">Imagerie Médicale</option>
+                            </select>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="montant" class="required">Montant (€)</label>
+                                <input type="number" id="montant" required step="0.01" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="tva">TVA (%)</label>
+                                <select id="tva">
+                                    <option value="20">20%</option>
+                                    <option value="10">10%</option>
+                                    <option value="5">5.5%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="description">Description</label>
+                            <textarea id="description" style="min-height: 80px;" placeholder="Détails supplémentaires..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Paiement</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="modepaiement">Mode de Paiement</label>
+                                <select id="modepaiement">
+                                    <option value="">Pas encore payé</option>
+                                    <option value="especes">Espèces</option>
+                                    <option value="cheque">Chèque</option>
+                                    <option value="cb">Carte Bancaire</option>
+                                    <option value="virement">Virement</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="datepaiement">Date de Paiement</label>
+                                <input type="date" id="datepaiement">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-check">
+                                <input type="checkbox" id="assurance">
+                                <span style="margin-left: var(--spacing-sm);">Couvert par assurance</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <button type="reset" class="btn btn-secondary">🔄 Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary">📄 Générer Facture</button>
+                        <button type="button" class="btn btn-secondary">📥 Télécharger PDF</button>
+                    </div>
+                </form>
+
+                <!-- Aperçu Facture -->
+                <div class="card mt-lg">
+                    <div class="card-header card-header-primary">
+                        <h3>📄 Aperçu Facture</h3>
+                    </div>
+                    <div class="card-body" style="font-family: monospace; background-color: #f9f9f9; padding: var(--spacing-lg); border-radius: var(--border-radius);">
+                        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+                            <div style="font-size: var(--font-size-2xl); font-weight: bold;">FACTURE</div>
+                            <div>Hopital Central</div>
+                        </div>
+
+                        <div style="margin-bottom: var(--spacing-lg); display: grid; grid-template-columns: 1fr 1fr;">
+                            <div>
+                                <strong>Patient:</strong> Jean Martin<br>
+                                <strong>N° Sécu:</strong> 1 45 03 75 123 456
+                            </div>
+                            <div style="text-align: right;">
+                                <strong>Facture #:</strong> F20260103001<br>
+                                <strong>Date:</strong> 15 Décembre 2025
+                            </div>
+                        </div>
+
+                        <div style="border: 1px solid #ddd; border-radius: var(--border-radius); padding: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-md); margin-bottom: var(--spacing-md); border-bottom: 1px solid #ddd; padding-bottom: var(--spacing-md);">
+                                <div><strong>Description</strong></div>
+                                <div style="text-align: right;"><strong>Montant</strong></div>
+                                <div style="text-align: right;"><strong>Montant TTC</strong></div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-md);">
+                                <div>Consultation Cardiologie</div>
+                                <div style="text-align: right;">150.00€</div>
+                                <div style="text-align: right;">180.00€</div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-md); text-align: right; margin-bottom: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid #ddd;">
+                            <div></div>
+                            <div>
+                                <strong>Total HT:</strong><br>
+                                <strong>TVA (20%):</strong><br>
+                                <strong>TOTAL TTC:</strong>
+                            </div>
+                            <div>
+                                150.00€<br>
+                                30.00€<br>
+                                <strong style="font-size: var(--font-size-lg);">180.00€</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
