@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Chambres - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="gestion-chambres.html" class="active">🛏️ Chambres</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>🛏️ Gestion des Chambres</h1>
+                        <p class="text-muted">Occupation: 45/55 lits (82%)</p>
+                    </div>
+                </div>
+
+                <!-- Filter -->
+                <div class="card mb-lg">
+                    <div class="card-body">
+                        <div class="table-search-box">
+                            <select style="flex: 1;">
+                                <option value="">Tous les services</option>
+                                <option value="cardiologie">Cardiologie</option>
+                                <option value="chirurgie">Chirurgie</option>
+                                <option value="pediatrie">Pédiatrie</option>
+                            </select>
+                            <button class="btn btn-secondary">🔍 Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cardiologie -->
+                <section>
+                    <h2>Cardiologie (10 lits)</h2>
+                    <div class="cards-grid">
+                        <div class="card card-room available">
+                            <div class="room-number">101</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Type:</span> <span>Simple</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>250€/jour</span>
+                                </div>
+                            </div>
+                            <div class="room-status available">Libre</div>
+                        </div>
+
+                        <div class="card card-room occupied">
+                            <div class="room-number">102</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Occupant:</span> <span>Michel Petit</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>250€/jour</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Entrée:</span> <span>12 Décembre</span>
+                                </div>
+                            </div>
+                            <div class="room-status occupied">Occupée</div>
+                        </div>
+
+                        <div class="card card-room available">
+                            <div class="room-number">103</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Type:</span> <span>Double</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>350€/jour</span>
+                                </div>
+                            </div>
+                            <div class="room-status available">Libre</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chirurgie -->
+                <section>
+                    <h2>Chirurgie (15 lits)</h2>
+                    <div class="cards-grid">
+                        <div class="card card-room occupied">
+                            <div class="room-number">201</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Occupant:</span> <span>Luc Bernard</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Entrée:</span> <span>14 Décembre</span>
+                                </div>
+                            </div>
+                            <div class="room-status occupied">Occupée</div>
+                        </div>
+
+                        <div class="card card-room occupied">
+                            <div class="room-number">202</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Occupant:</span> <span>Anne Laurent</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Entrée:</span> <span>10 Décembre</span>
+                                </div>
+                            </div>
+                            <div class="room-status occupied">Occupée</div>
+                        </div>
+
+                        <div class="card card-room available">
+                            <div class="room-number">203</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Type:</span> <span>Simple</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>300€/jour</span>
+                                </div>
+                            </div>
+                            <div class="room-status available">Libre</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pédiatrie -->
+                <section>
+                    <h2>Pédiatrie (10 lits)</h2>
+                    <div class="cards-grid">
+                        <div class="card card-room available">
+                            <div class="room-number">301</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Type:</span> <span>Simple</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>200€/jour</span>
+                                </div>
+                            </div>
+                            <div class="room-status available">Libre</div>
+                        </div>
+
+                        <div class="card card-room occupied">
+                            <div class="room-number">302</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Occupant:</span> <span>Emma Durand</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Âge:</span> <span>7 ans</span>
+                                </div>
+                            </div>
+                            <div class="room-status occupied">Occupée</div>
+                        </div>
+
+                        <div class="card card-room available">
+                            <div class="room-number">303</div>
+                            <div class="room-info">
+                                <div class="room-info-row">
+                                    <span>Type:</span> <span>Double</span>
+                                </div>
+                                <div class="room-info-row">
+                                    <span>Tarif:</span> <span>280€/jour</span>
+                                </div>
+                            </div>
+                            <div class="room-status available">Libre</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
