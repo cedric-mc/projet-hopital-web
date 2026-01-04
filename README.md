@@ -4,16 +4,6 @@
 
 Site web multi-pages professionnel pour un système de gestion hospitalier. Développé avec **HTML5 et CSS3 uniquement** (sans JavaScript backend), ce projet présente toutes les fonctionnalités d'un système de gestion hospitalier complet avec interface utilisateur moderne et responsive.
 
-### Objectifs Réalisés
-- ✅ 14+ pages HTML5 sémantiques
-- ✅ Design responsive mobile-first
-- ✅ Accessibility WCAG compliant
-- ✅ Formulaires avancés avec validation HTML5
-- ✅ Animations et transitions CSS3
-- ✅ Système de design robuste avec CSS variables
-- ✅ Guide de style complète
-- ✅ Documentation technique détaillée
-
 ## 🗂️ Structure du Projet
 
 ```
