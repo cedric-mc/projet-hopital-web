@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Statistiques - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="tableau-bord.html" class="active">📊 Statistiques</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <h1>📊 Tableau de Bord - Statistiques Détaillées</h1>
+                <p class="text-muted mb-lg">Données de décembre 2025</p>
+
+                <!-- KPI Cards -->
+                <section>
+                    <h2>Indicateurs Clés</h2>
+                    <div class="cards-grid">
+                        <div class="card card-stats">
+                            <div class="card-stats-icon">👥</div>
+                            <div class="card-stats-value">1,247</div>
+                            <p class="card-stats-label">Patients Actifs</p>
+                            <div class="card-stats-change">↑ 45 nouveaux cette semaine</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-success">
+                            <div class="card-stats-icon">📅</div>
+                            <div class="card-stats-value">342</div>
+                            <p class="card-stats-label">Consultations Mois</p>
+                            <div class="card-stats-change">↑ 12% vs mois précédent</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-warning">
+                            <div class="card-stats-icon">🛏️</div>
+                            <div class="card-stats-value">82%</div>
+                            <p class="card-stats-label">Taux Occupation</p>
+                            <div class="card-stats-change">↑ 5% vs dernière semaine</div>
+                        </div>
+
+                        <div class="card card-stats card-stats-danger">
+                            <div class="card-stats-icon">💰</div>
+                            <div class="card-stats-value">542K€</div>
+                            <p class="card-stats-label">Revenus Mois</p>
+                            <div class="card-stats-change">↑ 8% vs l'an dernier</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section>
+                    <h2>Analysessss Détaillées</h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-lg);">
+                        <!-- Patients par Type -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Distribution Patients par Type</div>
+                            <div style="padding: var(--spacing-lg) 0; text-align: center;">
+                                <div style="width: 150px; height: 150px; margin: 0 auto var(--spacing-lg); background: conic-gradient(#3498db 0deg 162deg, #2ecc71 162deg 288deg, #f39c12 288deg 360deg); border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+                                <div class="chart-legend" style="justify-content: center; flex-direction: column; align-items: flex-start;">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #3498db;"></div>
+                                        <span>Externes: 562 (45%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #2ecc71;"></div>
+                                        <span>Hospitalisés: 436 (35%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #f39c12;"></div>
+                                        <span>Urgences: 249 (20%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Occupation Services -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Occupation par Service</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Cardiologie</span>
+                                        <span>8/10</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 80%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9);"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Chirurgie</span>
+                                        <span>13/15</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 87%; height: 100%; background: linear-gradient(90deg, #e74c3c, #c0392b);"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Pédiatrie</span>
+                                        <span>6/10</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 60%; height: 100%; background: linear-gradient(90deg, #2ecc71, #27ae60);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Urgences</span>
+                                        <span>18/20</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 20px; overflow: hidden;">
+                                        <div style="width: 90%; height: 100%; background: linear-gradient(90deg, #f39c12, #d68910);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Consultations Weekly -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Consultations Hebdomadaires</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="display: flex; align-items: flex-end; gap: var(--spacing-md); height: 150px;">
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 65%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">48</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 72%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">52</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 80%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">58</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 85%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">61</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 92%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">66</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 88%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">63</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 95%; border-radius: 4px; position: relative;">
+                                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: var(--font-size-sm);">68</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-xl); font-size: var(--font-size-sm); color: var(--gray-500); margin-left: 0; margin-right: 0;">
+                                    <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenus Mensuels -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Revenus Trimestriels (€)</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="display: flex; align-items: flex-end; gap: var(--spacing-lg); height: 120px; margin-bottom: var(--spacing-lg);">
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 70%; border-radius: 4px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: var(--spacing-sm);">
+                                        <span style="font-weight: bold; font-size: var(--font-size-sm);">150K</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #3498db, #85c1e9); height: 85%; border-radius: 4px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: var(--spacing-sm);">
+                                        <span style="font-weight: bold; font-size: var(--font-size-sm);">165K</span>
+                                    </div>
+                                    <div style="flex: 1; background: linear-gradient(180deg, #2ecc71, #82e0aa); height: 100%; border-radius: 4px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: var(--spacing-sm);">
+                                        <span style="font-weight: bold; font-size: var(--font-size-sm);">195K</span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-around; font-size: var(--font-size-sm); color: var(--gray-500);">
+                                    <span>Q1 2025</span><span>Q2 2025</span><span>Q3 2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Médecins Performance -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Top Médecins (Consultations)</div>
+                            <div style="padding: var(--spacing-lg) 0;">
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Dr. Sarah Cohen</span>
+                                        <span>48</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 16px; overflow: hidden;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9);"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Dr. Pierre Lefevre</span>
+                                        <span>42</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 16px; overflow: hidden;">
+                                        <div style="width: 87%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9);"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: var(--spacing-lg);">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Dr. Anne Moreau</span>
+                                        <span>38</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 16px; overflow: hidden;">
+                                        <div style="width: 79%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm);">
+                                        <span>Dr. Caroline Blanc</span>
+                                        <span>35</span>
+                                    </div>
+                                    <div style="background-color: #e5e7eb; border-radius: 4px; height: 16px; overflow: hidden;">
+                                        <div style="width: 73%; height: 100%; background: linear-gradient(90deg, #3498db, #2980b9);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Patient Satisfaction -->
+                        <div class="card card-chart">
+                            <div class="chart-title">Satisfaction Patients</div>
+                            <div style="padding: var(--spacing-lg) 0; text-align: center;">
+                                <div style="font-size: var(--font-size-3xl); font-weight: bold; margin-bottom: var(--spacing-md);">4.7/5</div>
+                                <div style="display: flex; justify-content: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-lg);">
+                                    <span style="color: #f39c12; font-size: var(--font-size-xl);">★★★★★</span>
+                                </div>
+                                <div style="display: grid; gap: var(--spacing-sm); font-size: var(--font-size-sm);">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>5 étoiles</span>
+                                        <span>85% (1,059)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>4 étoiles</span>
+                                        <span>12% (150)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>3 étoiles</span>
+                                        <span>2% (25)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>2 étoiles</span>
+                                        <span>1% (13)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Export Section -->
+                <section style="margin-top: var(--spacing-xl);">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary">📥 Télécharger PDF</button>
+                        <button class="btn btn-secondary">📥 Télécharger Excel</button>
+                        <button class="btn btn-primary">📊 Imprimer Rapport</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
