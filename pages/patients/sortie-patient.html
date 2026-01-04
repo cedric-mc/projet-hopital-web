@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortie Patient - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo"><div class="logo-icon">🏥</div><span>Hopital Central</span></a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+            </div>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <a href="liste-patients.html">👤 Patients</a>
+                <a href="sortie-patient.html" class="active">Exit Sortie</a>
+            </nav>
+        </aside>
+
+        <main role="main">
+            <div class="page-content">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <a href="liste-patients.html">Patients</a>
+                    <span class="current">Sortie</span>
+                </nav>
+
+                <h1>Exit Sortie d'Hospitalisation</h1>
+
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <fieldset>
+                        <legend>Patient Hospitalisé</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="patient" class="required">Patient</label>
+                                <input type="text" id="patient" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numsecu">N° Sécu</label>
+                                <input type="text" id="numsecu" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="entree">Date d'Entrée</label>
+                                <input type="date" id="entree" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="chambre">Chambre</label>
+                                <input type="text" id="chambre" readonly>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Détails de Sortie</legend>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="datesortie" class="required">Date de Sortie</label>
+                                <input type="date" id="datesortie" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="duree">Durée d'Hospitalisation (jours)</label>
+                                <input type="number" id="duree" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="motif" class="required">Motif de Sortie</label>
+                                <select id="motif" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="guerison">Guérison</option>
+                                    <option value="amelioration">Amélioration</option>
+                                    <option value="transfer">Transfert</option>
+                                    <option value="sortie-volontaire">Sortie volontaire</option>
+                                    <option value="deces">Décès</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="medecin">Médecin Responsable</label>
+                                <input type="text" id="medecin" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="recommandations">Recommandations Post-Sortie</label>
+                            <textarea id="recommandations" style="min-height: 100px;" placeholder="Instructions et recommandations pour le patient..."></textarea>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="medicaments">Médicaments à Continuer</label>
+                            <textarea id="medicaments" style="min-height: 80px;" placeholder="Lister les médicaments à prendre après la sortie..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suivi">Suivi Médical Requis</label>
+                            <select id="suivi">
+                                <option value="1_semaine">1 semaine</option>
+                                <option value="2_semaines">2 semaines</option>
+                                <option value="1_mois">1 mois</option>
+                                <option value="3_mois">3 mois</option>
+                                <option value="aucun">Aucun suivi</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Documents</legend>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span style="margin-left: var(--spacing-sm);">Lettre de Sortie générée</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span style="margin-left: var(--spacing-sm);">Ordonnance remise</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox">
+                                <span style="margin-left: var(--spacing-sm);">Résultats d'examens remis</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox">
+                                <span style="margin-left: var(--spacing-sm);">Accord patient signé</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Facturation Finale</legend>
+                        <div class="form-group form-group-full">
+                            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+                                <div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Hébergement (3 jours × 250€)</div>
+                                    <div style="font-size: var(--font-size-2xl); font-weight: bold; color: var(--primary-color);">750.00€</div>
+                                </div>
+                                <div style="text-align: right; padding-top: var(--spacing-lg); border-top: 1px solid var(--border-color);">
+                                    <div style="font-size: var(--font-size-sm); color: var(--gray-500); margin-bottom: var(--spacing-xs);">Total TTC</div>
+                                    <div style="font-size: var(--font-size-2xl); font-weight: bold; color: var(--primary-color);">900.00€</div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="btn-group">
+                        <a href="liste-patients.html" class="btn btn-secondary">Annuler</a>
+                        <button type="submit" class="btn btn-danger" style="background-color: var(--danger-color);">🚪 Confirmer Sortie</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center;">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

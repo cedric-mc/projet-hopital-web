@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dossier médical patient - Système de Gestion Hospitalière">
+    <title>Dossier Médical - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Header -->
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-icon">🏥</div>
+                    <span>Hopital Central</span>
+                </a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+                <p class="hospital-subtitle">Excellence en Santé</p>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-item"><span class="header-icon">🔔</span></a>
+                <button class="menu-toggle" id="menuToggle" aria-expanded="false">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                        <div class="user-role">Administrateur</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <div class="sidebar-section">👥 Gestion</div>
+                <a href="liste-patients.html" class="active">👤 Patients</a>
+                <a href="../personnel/liste-personnel.html">👨‍⚕️ Personnel</a>
+                <a href="../rendez-vous/liste-rdv.html">📅 Rendez-vous</a>
+                <a href="../chambres/gestion-chambres.html">🛏️ Chambres</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main role="main">
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <a href="liste-patients.html">Patients</a>
+                    <span class="current">Dossier Médical</span>
+                </nav>
+
+                <!-- Patient Header -->
+                <div class="card card-header-primary mb-lg" style="padding: var(--spacing-lg);">
+                    <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
+                        <div style="width: 100px; height: 100px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: var(--font-size-3xl);">👤</div>
+                        <div style="flex: 1; color: white;">
+                            <h1 style="margin: 0 0 var(--spacing-sm); font-size: var(--font-size-2xl); color: white;">Jean Martin</h1>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); font-size: var(--font-size-sm);">
+                                <div><strong>N° Sécu:</strong> 1 45 03 75 123 456</div>
+                                <div><strong>Date Naissance:</strong> 15 mars 1978 (45 ans)</div>
+                                <div><strong>Groupe Sanguin:</strong> O+</div>
+                                <div><strong>Statut:</strong> 🟢 Actif</div>
+                            </div>
+                        </div>
+                        <div class="btn-group-vertical" style="width: auto; color: var(--dark-color);">
+                            <button class="btn btn-sm btn-secondary">✏️ Modifier</button>
+                            <button class="btn btn-sm btn-secondary">📥 Télécharger Dossier</button>
+                            <button class="btn btn-sm btn-danger">Exit Sortie</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div style="display: flex; gap: var(--spacing-md); border-bottom: 2px solid var(--border-color); margin-bottom: var(--spacing-lg); flex-wrap: wrap;">
+                    <button class="tab-button active" data-tab="informations" style="padding: var(--spacing-md); border: none; background: none; border-bottom: 3px solid transparent; color: var(--dark-color); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all var(--transition-fast);">📋 Informations</button>
+                    <button class="tab-button" data-tab="consultations" style="padding: var(--spacing-md); border: none; background: none; border-bottom: 3px solid transparent; color: var(--dark-color); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all var(--transition-fast);">🏥 Consultations</button>
+                    <button class="tab-button" data-tab="hospitalisations" style="padding: var(--spacing-md); border: none; background: none; border-bottom: 3px solid transparent; color: var(--dark-color); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all var(--transition-fast);">🛏️ Hospitalisations</button>
+                    <button class="tab-button" data-tab="ordonnances" style="padding: var(--spacing-md); border: none; background: none; border-bottom: 3px solid transparent; color: var(--dark-color); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all var(--transition-fast);">💊 Ordonnances</button>
+                    <button class="tab-button" data-tab="examens" style="padding: var(--spacing-md); border: none; background: none; border-bottom: 3px solid transparent; color: var(--dark-color); font-weight: var(--font-weight-semibold); cursor: pointer; transition: all var(--transition-fast);">🔬 Examens</button>
+                </div>
+
+                <!-- TAB 1: Informations -->
+                <div class="tab-content" id="tab-informations">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h3>📍 Informations Personnelles</h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="display: grid; gap: var(--spacing-md); font-size: var(--font-size-sm);">
+                                    <div>
+                                        <div class="text-muted">Adresse</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">123 Rue de la Paix, 75000 Paris</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted">Téléphone</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">06 12 34 56 78</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted">Email</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">jean.martin@email.com</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted">Contact d'Urgence</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">Anne Martin (Conjoint) - 06 98 76 54 32</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h3>⚕️ Informations Médicales</h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="display: grid; gap: var(--spacing-md); font-size: var(--font-size-sm);">
+                                    <div>
+                                        <div class="text-muted">Groupe Sanguin</div>
+                                        <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-lg);">O+</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted">Allergies</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">Pénicilline, Arachides</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted">Antécédents</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">Hypertension, Diabète type 2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: Consultations -->
+                <div class="tab-content" id="tab-consultations" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="flex-between">
+                                <h3>Historique des Consultations</h3>
+                                <button class="btn btn-sm btn-primary">➕ Nouvelle Consultation</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Médecin</th>
+                                            <th>Motif</th>
+                                            <th>Diagnostic</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-label="Date">15 Décembre 2025</td>
+                                            <td data-label="Médecin">Dr. Sarah Cohen</td>
+                                            <td data-label="Motif">Consultation de suivi</td>
+                                            <td data-label="Diagnostic">Hypertension bien contrôlée</td>
+                                            <td data-label="Actions"><button class="action-icon view">👁️</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Date">01 Décembre 2025</td>
+                                            <td data-label="Médecin">Dr. Pierre Lefevre</td>
+                                            <td data-label="Motif">Douleurs dorsales</td>
+                                            <td data-label="Diagnostic">Lumbago</td>
+                                            <td data-label="Actions"><button class="action-icon view">👁️</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Date">15 Novembre 2025</td>
+                                            <td data-label="Médecin">Dr. Sarah Cohen</td>
+                                            <td data-label="Motif">Bilan annuel</td>
+                                            <td data-label="Diagnostic">Bon état général</td>
+                                            <td data-label="Actions"><button class="action-icon view">👁️</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Hospitalisations -->
+                <div class="tab-content" id="tab-hospitalisations" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Historique des Hospitalisations</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; gap: var(--spacing-lg);">
+                                <div style="padding: var(--spacing-lg); border-left: 4px solid var(--danger-color); background-color: #fff5f5; border-radius: var(--border-radius);">
+                                    <div style="font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">🏥 Chirurgie appendicite - Septembre 2023</div>
+                                    <div style="display: grid; gap: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--gray-600);">
+                                        <div><strong>Chambre:</strong> 201 (Chirurgie)</div>
+                                        <div><strong>Durée:</strong> 4 jours (12 - 16 septembre)</div>
+                                        <div><strong>Médecin:</strong> Dr. Anne Moreau</div>
+                                        <div><strong>Motif:</strong> Appendicite aigüe</div>
+                                    </div>
+                                </div>
+
+                                <div style="padding: var(--spacing-lg); border-left: 4px solid var(--warning-color); background-color: #fff3e0; border-radius: var(--border-radius);">
+                                    <div style="font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">🏥 Suivi hypertension - Juillet 2022</div>
+                                    <div style="display: grid; gap: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--gray-600);">
+                                        <div><strong>Chambre:</strong> 102 (Cardiologie)</div>
+                                        <div><strong>Durée:</strong> 2 jours (03 - 05 juillet)</div>
+                                        <div><strong>Médecin:</strong> Dr. Thomas Renault</div>
+                                        <div><strong>Motif:</strong> Bilan et ajustement traitement</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: Ordonnances -->
+                <div class="tab-content" id="tab-ordonnances" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>💊 Ordonnances Actives</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; gap: var(--spacing-lg);">
+                                <div style="padding: var(--spacing-lg); border-left: 4px solid var(--primary-color); background-color: #e3f2fd; border-radius: var(--border-radius);">
+                                    <div style="font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">Ramipril 5mg</div>
+                                    <div style="display: grid; gap: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--gray-600);">
+                                        <div><strong>Dosage:</strong> 1 comprimé par jour</div>
+                                        <div><strong>Indications:</strong> Hypertension artérielle</div>
+                                        <div><strong>Depuis:</strong> Janvier 2024</div>
+                                    </div>
+                                </div>
+
+                                <div style="padding: var(--spacing-lg); border-left: 4px solid var(--primary-color); background-color: #e3f2fd; border-radius: var(--border-radius);">
+                                    <div style="font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm);">Metformine 500mg</div>
+                                    <div style="display: grid; gap: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--gray-600);">
+                                        <div><strong>Dosage:</strong> 2 comprimés, 2 fois par jour</div>
+                                        <div><strong>Indications:</strong> Diabète type 2</div>
+                                        <div><strong>Depuis:</strong> Juin 2023</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: Examens -->
+                <div class="tab-content" id="tab-examens" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>🔬 Résultats d'Examens</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Type d'Examen</th>
+                                            <th>Résultat</th>
+                                            <th>Interprétation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-label="Date">10 Décembre 2025</td>
+                                            <td data-label="Type">Prise de sang</td>
+                                            <td data-label="Résultat">Glucose: 120 mg/dL</td>
+                                            <td data-label="Interprétation">Légèrement élevé</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Date">01 Décembre 2025</td>
+                                            <td data-label="Type">Tension artérielle</td>
+                                            <td data-label="Résultat">140/90 mmHg</td>
+                                            <td data-label="Interprétation">Bien contrôlée</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Date">15 Novembre 2025</td>
+                                            <td data-label="Type">ECG</td>
+                                            <td data-label="Résultat">Rythme régulier</td>
+                                            <td data-label="Interprétation">Normal</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center; border-top: 1px solid var(--border-color);">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+
+        // Tab switching
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+
+                // Hide all tabs
+                tabContents.forEach(tab => tab.style.display = 'none');
+
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.borderBottomColor = 'transparent';
+                    btn.style.color = 'var(--dark-color)';
+                });
+
+                // Show selected tab
+                document.getElementById(`tab-${tabName}`).style.display = 'block';
+
+                // Add active class to clicked button
+                button.classList.add('active');
+                button.style.borderBottomColor = 'var(--primary-color)';
+                button.style.color = 'var(--primary-color)';
+            });
+        });
+
+        // Set first tab as active by default
+        tabButtons[0].style.borderBottomColor = 'var(--primary-color)';
+        tabButtons[0].style.color = 'var(--primary-color)';
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Liste des patients - Système de Gestion Hospitalière">
+    <title>Liste des Patients - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Header -->
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-icon">🏥</div>
+                    <span>Hopital Central</span>
+                </a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+                <p class="hospital-subtitle">Excellence en Santé</p>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-item"><span class="header-icon">🔔</span></a>
+                <button class="menu-toggle" id="menuToggle" aria-expanded="false">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                        <div class="user-role">Administrateur</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <div class="sidebar-section">👥 Gestion</div>
+                <a href="liste-patients.html" class="active">👤 Patients</a>
+                <a href="../personnel/liste-personnel.html">👨‍⚕️ Personnel</a>
+                <a href="../rendez-vous/liste-rdv.html">📅 Rendez-vous</a>
+                <a href="../chambres/gestion-chambres.html">🛏️ Chambres</a>
+                <div class="sidebar-section" style="margin-top: var(--spacing-lg);">💼 Opérations</div>
+                <a href="../rendez-vous/planifier-rdv.html">➕ Planifier RDV</a>
+                <a href="admission-patient.html">➕ Admettre Patient</a>
+                <a href="../rendez-vous/consultation.html">📋 Consultation</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main role="main">
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <span class="current">👤 Patients</span>
+                </nav>
+
+                <!-- Page Title -->
+                <div class="flex-between mb-lg">
+                    <div>
+                        <h1>Gestion des Patients</h1>
+                        <p class="text-muted">1,247 patients actifs dans le système</p>
+                    </div>
+                    <a href="admission-patient.html" class="btn btn-primary">➕ Admettre Patient</a>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="card mb-lg">
+                    <div class="card-body">
+                        <div class="table-search-box">
+                            <input type="text" placeholder="Rechercher par nom ou numéro sécu..." style="flex: 1;">
+                            <select>
+                                <option value="">Tous les types</option>
+                                <option value="externe">Externe</option>
+                                <option value="hospitalisé">Hospitalisé</option>
+                                <option value="urgence">Urgence</option>
+                            </select>
+                            <select>
+                                <option value="">Tous les statuts</option>
+                                <option value="actif">Actif</option>
+                                <option value="inactif">Inactif</option>
+                                <option value="sortie">Sorti</option>
+                            </select>
+                            <button class="btn btn-secondary">🔍 Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patients Table -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-wrapper sticky-header">
+                            <table class="table-sortable">
+                                <thead>
+                                    <tr>
+                                        <th data-sortable>Photo</th>
+                                        <th data-sortable>Nom Complet</th>
+                                        <th data-sortable>Âge</th>
+                                        <th data-sortable>N° Sécu</th>
+                                        <th data-sortable>Type</th>
+                                        <th data-sortable>Groupe Sanguin</th>
+                                        <th data-sortable>Statut</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Photo"><div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #3498db, #2980b9); margin: 0;"></div></td>
+                                        <td data-label="Nom">Jean Martin</td>
+                                        <td data-label="Âge">45</td>
+                                        <td data-label="N° Sécu">1 45 03 75 123 456</td>
+                                        <td data-label="Type"><span class="badge badge-info">Externe</span></td>
+                                        <td data-label="Groupe">O+</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Actif</span></td>
+                                        <td data-label="Actions" class="table-actions">
+                                            <a href="dossier-medical.html" class="action-icon view" title="Consulter">👁️</a>
+                                            <button class="action-icon edit" title="Modifier">✏️</button>
+                                            <button class="action-icon delete" title="Supprimer">🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Photo"><div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2ecc71, #27ae60); margin: 0;"></div></td>
+                                        <td data-label="Nom">Marie Dubois</td>
+                                        <td data-label="Âge">38</td>
+                                        <td data-label="N° Sécu">1 38 07 63 234 567</td>
+                                        <td data-label="Type"><span class="badge badge-warning">Hospitalisée</span></td>
+                                        <td data-label="Groupe">A-</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Actif</span></td>
+                                        <td data-label="Actions" class="table-actions">
+                                            <a href="dossier-medical.html" class="action-icon view" title="Consulter">👁️</a>
+                                            <button class="action-icon edit" title="Modifier">✏️</button>
+                                            <button class="action-icon delete" title="Supprimer">🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Photo"><div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #f39c12, #d68910); margin: 0;"></div></td>
+                                        <td data-label="Nom">Luc Bernard</td>
+                                        <td data-label="Âge">67</td>
+                                        <td data-label="N° Sécu">1 67 08 92 345 678</td>
+                                        <td data-label="Type"><span class="badge badge-danger">Urgence</span></td>
+                                        <td data-label="Groupe">B+</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Actif</span></td>
+                                        <td data-label="Actions" class="table-actions">
+                                            <a href="dossier-medical.html" class="action-icon view" title="Consulter">👁️</a>
+                                            <button class="action-icon edit" title="Modifier">✏️</button>
+                                            <button class="action-icon delete" title="Supprimer">🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Photo"><div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #9b59b6, #8e44ad); margin: 0;"></div></td>
+                                        <td data-label="Nom">Sophie Laurent</td>
+                                        <td data-label="Âge">28</td>
+                                        <td data-label="N° Sécu">1 28 04 56 456 789</td>
+                                        <td data-label="Type"><span class="badge badge-info">Externe</span></td>
+                                        <td data-label="Groupe">AB+</td>
+                                        <td data-label="Statut"><span class="badge badge-success">Actif</span></td>
+                                        <td data-label="Actions" class="table-actions">
+                                            <a href="dossier-medical.html" class="action-icon view" title="Consulter">👁️</a>
+                                            <button class="action-icon edit" title="Modifier">✏️</button>
+                                            <button class="action-icon delete" title="Supprimer">🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Photo"><div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e74c3c, #c0392b); margin: 0;"></div></td>
+                                        <td data-label="Nom">Michel Petit</td>
+                                        <td data-label="Âge">72</td>
+                                        <td data-label="N° Sécu">1 72 12 34 567 890</td>
+                                        <td data-label="Type"><span class="badge badge-warning">Hospitalisé</span></td>
+                                        <td data-label="Groupe">O-</td>
+                                        <td data-label="Statut"><span class="badge badge-secondary">Inactif</span></td>
+                                        <td data-label="Actions" class="table-actions">
+                                            <a href="dossier-medical.html" class="action-icon view" title="Consulter">👁️</a>
+                                            <button class="action-icon edit" title="Modifier">✏️</button>
+                                            <button class="action-icon delete" title="Supprimer">🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="table-pagination">
+                    <span class="pagination-info">Affichage 1 à 5 sur 1,247 patients</span>
+                    <div class="pagination">
+                        <span class="disabled">← Précédent</span>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span>...</span>
+                        <a href="#">249</a>
+                        <span class="active">250</span>
+                        <a href="#">→ Suivant</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center; border-top: 1px solid var(--border-color);">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', sidebar.classList.contains('active'));
+            });
+        }
+    </script>
+</body>
+</html>

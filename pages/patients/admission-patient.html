@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admission d'un patient - Système de Gestion Hospitalière">
+    <title>Admission Patient - Hopital Central</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Header -->
+        <header role="banner">
+            <div class="header-left">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-icon">🏥</div>
+                    <span>Hopital Central</span>
+                </a>
+            </div>
+            <div class="header-center">
+                <h1 class="hospital-name">Centre Médical Universel</h1>
+                <p class="hospital-subtitle">Excellence en Santé</p>
+            </div>
+            <div class="header-right">
+                <a href="#" class="header-item"><span class="header-icon">🔔</span></a>
+                <button class="menu-toggle" id="menuToggle" aria-expanded="false">☰</button>
+                <div class="user-profile">
+                    <div class="user-avatar">DR</div>
+                    <div class="user-info">
+                        <div class="user-name">Dr. Dupont</div>
+                        <div class="user-role">Administrateur</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar" role="navigation">
+            <nav>
+                <div class="sidebar-section">👥 Gestion</div>
+                <a href="liste-patients.html">👤 Patients</a>
+                <a href="../personnel/liste-personnel.html">👨‍⚕️ Personnel</a>
+                <a href="../rendez-vous/liste-rdv.html">📅 Rendez-vous</a>
+                <a href="../chambres/gestion-chambres.html">🛏️ Chambres</a>
+                <div class="sidebar-section" style="margin-top: var(--spacing-lg);">💼 Opérations</div>
+                <a href="../rendez-vous/planifier-rdv.html">➕ Planifier RDV</a>
+                <a href="admission-patient.html" class="active">➕ Admettre Patient</a>
+                <a href="../rendez-vous/consultation.html">📋 Consultation</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main role="main">
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Accueil</a>
+                    <a href="liste-patients.html">Patients</a>
+                    <span class="current">Admission</span>
+                </nav>
+
+                <!-- Page Title -->
+                <h1>Admission d'un Nouveau Patient</h1>
+                <p class="text-muted mb-lg">Veuillez remplir tous les champs obligatoires marqués d'un *</p>
+
+                <!-- Form -->
+                <form style="display: grid; gap: var(--spacing-xl);">
+                    <!-- Section 1: Informations Personnelles -->
+                    <fieldset>
+                        <legend>📋 Informations Personnelles</legend>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="prenom" class="required">Prénom</label>
+                                <input type="text" id="prenom" name="prenom" required placeholder="Ex: Jean">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nom" class="required">Nom</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Ex: Martin">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="datenaissance" class="required">Date de Naissance</label>
+                                <input type="date" id="datenaissance" name="datenaissance" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sexe" class="required">Sexe</label>
+                                <select id="sexe" name="sexe" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="M">Masculin</option>
+                                    <option value="F">Féminin</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telephone" class="required">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="required">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="patient@example.com">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="adresse" class="required">Adresse</label>
+                                <input type="text" id="adresse" name="adresse" required placeholder="123 Rue de la Paix">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ville" class="required">Ville</label>
+                                <input type="text" id="ville" name="ville" required placeholder="Paris">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="codepostal" class="required">Code Postal</label>
+                                <input type="text" id="codepostal" name="codepostal" required placeholder="75000">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 2: Informations Médicales -->
+                    <fieldset>
+                        <legend>⚕️ Informations Médicales</legend>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="numsecu" class="required">Numéro de Sécurité Sociale</label>
+                                <input type="text" id="numsecu" name="numsecu" required placeholder="1 45 03 75 123 456" pattern="[0-9\s]{13,}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="groupsanguin" class="required">Groupe Sanguin</label>
+                                <select id="groupsanguin" name="groupsanguin" required>
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="allergies">Allergies Connues</label>
+                                <textarea id="allergies" name="allergies" placeholder="Lister les allergies séparées par des virgules..." style="min-height: 80px;"></textarea>
+            
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="antecedents">Antécédents Médicaux</label>
+                                <textarea id="antecedents" name="antecedents" placeholder="Décrire les antécédents médicaux importants..." style="min-height: 100px;"></textarea>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="medicaments">Médicaments Actuels</label>
+                                <textarea id="medicaments" name="medicaments" placeholder="Lister les médicaments pris actuellement..." style="min-height: 80px;"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 3: Type d'Admission -->
+                    <fieldset>
+                        <legend>🏥 Type d'Admission</legend>
+                        
+                        <div class="form-check-inline">
+                            <label class="form-check">
+                                <input type="radio" name="typeadmission" value="externe" required>
+                                <span style="margin-left: var(--spacing-sm);">👤 Externe (Consultation sans hospitalisation)</span>
+                            </label>
+
+                            <label class="form-check">
+                                <input type="radio" name="typeadmission" value="hospitalisé" required>
+                                <span style="margin-left: var(--spacing-sm);">🛏️ Hospitalisé (Avec hospitalisation)</span>
+                            </label>
+
+                            <label class="form-check">
+                                <input type="radio" name="typeadmission" value="urgence" required>
+                                <span style="margin-left: var(--spacing-sm);">🚨 Urgence</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 4: Hospitalisation (si nécessaire) -->
+                    <fieldset id="sectionHospitalisation" style="display: none;">
+                        <legend>🛏️ Détails d'Hospitalisation</legend>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="chambre">Numéro de Chambre</label>
+                                <select id="chambre" name="chambre">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="101">Chambre 101 (Cardiologie)</option>
+                                    <option value="102">Chambre 102 (Cardiologie)</option>
+                                    <option value="201">Chambre 201 (Chirurgie)</option>
+                                    <option value="202">Chambre 202 (Chirurgie)</option>
+                                    <option value="301">Chambre 301 (Pédiatrie)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Service</label>
+                                <select id="service" name="service">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="cardiologie">Cardiologie</option>
+                                    <option value="chirurgie">Chirurgie</option>
+                                    <option value="pediatrie">Pédiatrie</option>
+                                    <option value="urgences">Urgences</option>
+                                    <option value="oncologie">Oncologie</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dureeprévue">Durée d'Hospitalisation Prévue (jours)</label>
+                                <input type="number" id="dureeprévue" name="dureeprévue" min="1" max="365" placeholder="Ex: 5">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medecin">Médecin Responsable</label>
+                                <select id="medecin" name="medecin">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="dr-cohen">Dr. Sarah Cohen</option>
+                                    <option value="dr-lefevre">Dr. Pierre Lefevre</option>
+                                    <option value="dr-moreau">Dr. Anne Moreau</option>
+                                    <option value="dr-renault">Dr. Thomas Renault</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="motif">Motif d'Hospitalisation</label>
+                                <textarea id="motif" name="motif" placeholder="Décrire le motif de l'hospitalisation..." style="min-height: 100px;"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 5: Responsable -->
+                    <fieldset>
+                        <legend>👥 Responsable/Contact d'Urgence</legend>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="nomresponsable">Nom du Responsable</label>
+                                <input type="text" id="nomresponsable" name="nomresponsable" placeholder="Ex: Anne Martin">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lien">Lien de Parenté</label>
+                                <select id="lien" name="lien">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="conjoint">Conjoint(e)</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="enfant">Enfant</option>
+                                    <option value="frere-soeur">Frère/Sœur</option>
+                                    <option value="ami">Ami(e)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telresponsable">Téléphone du Responsable</label>
+                                <input type="tel" id="telresponsable" name="telresponsable" placeholder="06 12 34 56 78">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Consent -->
+                    <div class="form-group">
+                        <label class="form-check">
+                            <input type="checkbox" name="consent" required>
+                            <span style="margin-left: var(--spacing-sm);">Je confirme que les informations fournies sont exactes et j'accepte les conditions d'admission</span>
+                        </label>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="btn-group">
+                        <a href="liste-patients.html" class="btn btn-secondary">Annuler</a>
+                        <button type="reset" class="btn btn-secondary">🔄 Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary">✓ Admettre le Patient</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="background-color: var(--dark-color); color: white; padding: var(--spacing-lg); text-align: center; border-top: 1px solid var(--border-color);">
+            <p style="margin: 0;">&copy; 2026 Hopital Central</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+
+        // Show/hide hospitalization section based on type
+        const typeAdmissionRadios = document.querySelectorAll('input[name="typeadmission"]');
+        const sectionHospitalisation = document.getElementById('sectionHospitalisation');
+
+        typeAdmissionRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'hospitalisé' || radio.value === 'urgence') {
+                    sectionHospitalisation.style.display = 'block';
+                } else {
+                    sectionHospitalisation.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
